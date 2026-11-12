@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Privacy policy for Beatsync for Android and Android TV.">
+  <title>Beatsync Privacy Policy</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0a0a0a;
+      --text: #fafafa;
+      --muted: #a3a3a3;
+      --border: rgba(250, 250, 250, 0.12);
+      --link: #6ec678;
+      --sparkle-fill: #5ec069;
+      --sparkle-stroke: #5ec069;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--bg);
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.65;
+    }
+
+    .bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      height: 100lvh;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+      contain: strict;
+      background:
+        linear-gradient(180deg, rgba(10, 10, 10, 0.55), rgba(10, 10, 10, 0.35) 50%, rgba(10, 10, 10, 0.65)),
+        radial-gradient(ellipse 45% 38% at 80% 12%, rgba(94, 192, 105, 0.12), transparent 70%),
+        radial-gradient(ellipse 63% 49% at 78% 22%, #1c1c1c, transparent 70%),
+        radial-gradient(ellipse 56% 63% at 8% 85%, #181818, transparent 70%),
+        radial-gradient(ellipse 49% 42% at 99% 99%, #161616, transparent 70%),
+        var(--bg);
+    }
+
+    /* Clouds seen through a dot grid give the halftone look. */
+    .halftone {
+      -webkit-mask-image: radial-gradient(circle, #000 1px, transparent 1.6px);
+      mask-image: radial-gradient(circle, #000 1px, transparent 1.6px);
+      -webkit-mask-size: 4px 4px;
+      mask-size: 4px 4px;
+    }
+
+    .bg-dots {
+      position: absolute;
+      inset: -15%;
+      background:
+        radial-gradient(ellipse 40% 30% at 65% 35%, #5a5a5a, transparent 70%),
+        radial-gradient(ellipse 35% 40% at 18% 68%, #6b6b6b, transparent 65%),
+        radial-gradient(ellipse 30% 25% at 40% 10%, #4d4d4d, transparent 70%),
+        radial-gradient(ellipse 30% 30% at 88% 80%, #606060, transparent 70%);
+      opacity: 0.45;
+      animation: dots-drift 17s ease-in-out infinite alternate;
+    }
+
+    .bg.is-live .bg-dots {
+      display: none;
+    }
+
+    .bg-clouds,
+    .bg-cloud-dots {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .bg-clouds {
+      opacity: 0.4;
+    }
+
+    .bg-cloud-dots {
+      opacity: 0.9;
+    }
+
+    .sparkle {
+      position: absolute;
+      fill: var(--sparkle-fill);
+      stroke: var(--sparkle-stroke);
+      stroke-width: 1.2;
+      filter: drop-shadow(0 0 4px rgba(94, 192, 105, 0.5));
+      animation: twinkle var(--duration, 6s) ease-in-out var(--delay, 0s) infinite;
+    }
+
+    .bg-defs {
+      position: absolute;
+      width: 0;
+      height: 0;
+    }
+
+    @keyframes dots-drift {
+      from {
+        transform: translate(3%, -2%) scale(1);
+      }
+
+      to {
+        transform: translate(-3%, 2%) scale(1.1);
+      }
+    }
+
+    @keyframes twinkle {
+      0%,
+      100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+      }
+
+      50% {
+        opacity: 0.95;
+        transform: scale(1.1);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .bg-dots,
+      .sparkle {
+        animation: none;
+      }
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 50.6rem;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+
+    header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .kicker {
+      margin: 0 0 0.5rem;
+      color: var(--muted);
+      font-size: 0.9375rem;
+      font-weight: 500;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.75rem, 5vw, 2.25rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .updated {
+      margin: 0.75rem 0 0;
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+
+    h2 {
+      margin: 2.5rem 0 0.75rem;
+      font-size: 1.25rem;
+      line-height: 1.3;
+    }
+
+    section:first-of-type h2 {
+      margin-top: 0;
+    }
+
+    p {
+      margin: 0 0 1rem;
+    }
+
+    a {
+      color: var(--link);
+      text-underline-offset: 0.15em;
+      overflow-wrap: anywhere;
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--link);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        font-size: 1rem;
+      }
+
+      main {
+        padding: 2rem 1rem 3rem;
+      }
+    }
+
+    @media print {
+      html,
+      body {
+        background: none;
+        color: #000;
+      }
+
+      .bg {
+        display: none;
+      }
+
+      header {
+        border-color: #ccc;
+      }
+
+      .kicker,
+      .updated {
+        color: #444;
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <svg class="bg-defs" focusable="false">
+      <symbol id="sparkle" viewBox="0 0 24 24">
+        <rect x="2" y="8" width="5" height="8" rx="2.5"/><rect x="9.5" y="2" width="5" height="20" rx="2.5"/><rect x="17" y="6" width="5" height="12" rx="2.5"/>
+      </symbol>
+    </svg>
+    <div class="bg-dots halftone"></div>
+    <canvas class="bg-clouds"></canvas>
+    <canvas class="bg-cloud-dots halftone"></canvas>
+    <svg class="sparkle" viewBox="0 0 24 24" style="left:5%;top:14%;width:14px;height:14px;--delay:0s;--duration:2.4s"><use href="#sparkle"/></svg>
+    <svg class="sparkle" viewBox="0 0 24 24" style="left:18%;top:6%;width:10px;height:10px;--delay:0s;--duration:2.4s"><use href="#sparkle"/></svg>
+    <svg class="sparkle" viewBox="0 0 24 24" style="left:48%;top:4%;width:9px;height:9px;--delay:0s;--duration:2.4s"><use href="#sparkle"/></svg>
+    <svg class="sparkle" viewBox="0 0 24 24" style="left:92%;top:9%;width:16px;height:16px;--delay:0s;--duration:2.4s"><use href="#sparkle"/></svg>
+    <svg class="sparkle" viewBox="0 0 24 24" style="left:78%;top:22%;width:11px;height:11px;--delay:0s;--duration:2.4s"><use href="#sparkle"/></svg>
+    <svg class="sparkle" viewBox="0 0 24 24" style="left:3%;top:46%;width:12px;height:12px;--delay:0s;--duration:2.4s"><use href="#sparkle"/></svg>
+    <svg class="sparkle" viewBox="0 0 24 24" style="left:95%;top:44%;width:13px;height:13px;--delay:0s;--duration:2.4s"><use href="#sparkle"/></svg>
+    <svg class="sparkle" viewBox="0 0 24 24" style="left:58%;top:56%;width:9px;height:9px;--delay:0s;--duration:2.4s"><use href="#sparkle"/></svg>
+    <svg class="sparkle" viewBox="0 0 24 24" style="left:10%;top:78%;width:15px;height:15px;--delay:0s;--duration:2.4s"><use href="#sparkle"/></svg>
+    <svg class="sparkle" viewBox="0 0 24 24" style="left:88%;top:72%;width:10px;height:10px;--delay:0s;--duration:2.4s"><use href="#sparkle"/></svg>
+    <svg class="sparkle" viewBox="0 0 24 24" style="left:30%;top:92%;width:12px;height:12px;--delay:0s;--duration:2.4s"><use href="#sparkle"/></svg>
+    <svg class="sparkle" viewBox="0 0 24 24" style="left:66%;top:90%;width:14px;height:14px;--delay:0s;--duration:2.4s"><use href="#sparkle"/></svg>
+  </div>
+
+  <main>
+    <header>
+      <p class="kicker"><a href="../">Beatsync</a> privacy information</p>
+      <h1>Beatsync Android Privacy Policy</h1>
+      <p class="updated">Updated <time datetime="2026-11-12">November 12, 2026</time></p>
+    </header>
+
+    <section>
+      <h2>Scope and contact</h2>
+      <p>This policy covers Beatsync for Android phones and Android TV, package com.beatsync. Beatsync plays music in sync with other devices by joining rooms on the open-source Beatsync server, the same rooms the web app at beatsync.gg uses. By default the app uses the public Beatsync server, which is operated by the Beatsync project, not by the developer of this app.</p>
+      <p>For questions or requests about this policy, contact <a href="mailto:reshu70173@gmail.com" target="_blank" rel="noopener noreferrer">reshu70173@gmail.com</a>.</p>
+    </section>
+
+    <section>
+      <h2>Rooms and the Beatsync server</h2>
+      <p>To join a room, the app connects to the Beatsync server (server.beatsync.gg) and sends the room code, your display name, a random ID the app creates for this installation, and timing measurements used to keep playback in sync, such as network round-trip times and this device's audio delay and timing nudge. You don't create an account; the display name is a random name such as "electric-turtle", which you can regenerate.</p>
+      <p>While you're in a room, the server receives what you do there: playing, pausing, skipping and seeking; songs you search for, add, upload, reorder or remove; and room settings you change.</p>
+      <p>Everyone in a room can see your display name, whether you're an admin, and your location if you choose to share it. The server also lists active rooms publicly, including in the "Playing now" lists in this app and on beatsync.gg, with each room's code, its songs and the people in it. Anyone with a room's code can join it.</p>
+      <p>Songs added to a room are stored in the Beatsync server's file storage, and every device in the room downloads them from there. Removing a song you uploaded or added by search from the queue deletes its file. The server's handling and retention of room data are decided by its operator; see the <a href="https://github.com/freeman-jiang/beatsync" target="_blank" rel="noopener noreferrer">Beatsync project</a>.</p>
+    </section>
+
+    <section>
+      <h2>Album covers</h2>
+      <p>To show album covers, the app looks up the names of the current and next songs through the Beatsync server's music search, then loads the matching cover image from Qobuz's image server (static.qobuz.com). As with any image on the web, that server receives your device's IP address and the image request. Search results in Add music show cover images from the same server.</p>
+    </section>
+
+    <section>
+      <h2>Location (optional)</h2>
+      <p>Location sharing is off by default. If you turn on "Show my location", the app asks GeoJS (get.geojs.io), or country.is if GeoJS doesn't answer, for an approximate city, region and country based on your device's IP address, and shares it with the room so people see your flag and city. The app doesn't use GPS and doesn't request Android's location permission. Turning sharing off clears the location the server holds for you.</p>
+    </section>
+
+    <section>
+      <h2>Camera and QR codes</h2>
+      <p>The phone app asks for camera access only when you open the QR code scanner. Camera frames are read on your device by Google ML Kit's barcode scanner, which is built into the app, to find a room code. Images aren't uploaded or saved. A photo you pick to scan is read on your device the same way.</p>
+      <p>ML Kit sends Google limited information for diagnostics and usage analytics: device information, the app's package name and version, performance metrics, API settings such as image size, and a per-installation identifier. Google states that it doesn't share this information with third parties; see <a href="https://developers.google.com/ml-kit/android-data-disclosure" target="_blank" rel="noopener noreferrer">ML Kit's data disclosure</a>. The Android TV app doesn't use a camera.</p>
+    </section>
+
+    <section>
+      <h2>Information stored on your device</h2>
+      <p>The app stores your display name, its random installation ID, the last room you started (for Rejoin), your timing nudge and your location-sharing choice. Songs you've played, and upcoming songs on Android TV, are cached on the device so they start on time.</p>
+      <p>Beatsync doesn't include an advertising SDK, a billing SDK or any analytics SDK other than the ML Kit diagnostics described above. It doesn't request access to your contacts, microphone or precise location. Notification permission is used only for the playback controls shown while music plays.</p>
+    </section>
+
+    <section>
+      <h2>Network connections and support</h2>
+      <p>The developer of Beatsync doesn't operate servers that receive your data. The app connects to the Beatsync server and its file storage, to Qobuz's image server for covers, to GeoJS or country.is only when location sharing is on, and to Google for ML Kit on phones.</p>
+      <p>If you email support, we receive the address and information you choose to send. We use it to respond to your request and keep it as long as needed to handle the request, resolve issues or meet legal obligations.</p>
+    </section>
+
+    <section>
+      <h2>Security and sharing</h2>
+      <p>Beatsync connects to these services over HTTPS and secure WebSockets. We don't sell your personal information. Room activity is visible to the people in the room and, for active rooms, to anyone who views the public room list, as described above.</p>
+    </section>
+
+    <section>
+      <h2>Your choices and deletion</h2>
+      <p>To remove everything the app stores on your device, use Android Settings → Apps → Beatsync → Storage → Clear storage (the names may vary by device). This resets your display name, installation ID and settings, and removes cached songs. You can also leave location sharing off, and remove songs you added from a room's queue to delete their files.</p>
+      <p>Room data held by the Beatsync server is controlled by its operator; contact the Beatsync project through its <a href="https://github.com/freeman-jiang/beatsync" target="_blank" rel="noopener noreferrer">GitHub page</a>. To request deletion of support messages, email <a href="mailto:reshu70173@gmail.com" target="_blank" rel="noopener noreferrer">reshu70173@gmail.com</a> from the relevant address.</p>
+    </section>
+
+    <section>
+      <h2>Age and policy changes</h2>
+      <p>Beatsync is not intended for children under 13. We may update this policy when the app's data handling changes; the date above shows the latest revision.</p>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const bg = document.querySelector(".bg");
+      const soft = bg.querySelector(".bg-clouds");
+      const dots = bg.querySelector(".bg-cloud-dots");
+      const softCtx = soft.getContext("2d");
+      const dotsCtx = dots.getContext("2d");
+      if (!softCtx || !dotsCtx) return;
+
+      const perm = new Uint8Array(512);
+      const p = Array.from({ length: 256 }, (_, i) => i);
+      let seed = 7;
+      for (let i = 255; i > 0; i--) {
+        seed = (seed * 16807) % 2147483647;
+        const j = seed % (i + 1);
+        [p[i], p[j]] = [p[j], p[i]];
+      }
+      for (let i = 0; i < 512; i++) perm[i] = p[i & 255];
+
+      const fade = (t) => t * t * t * (t * (t * 6 - 15) + 10);
+      const grad = (h, x, y) => (h & 1 ? -x : x) + (h & 2 ? -y : y);
+
+      function noise(x, y) {
+        const xi = Math.floor(x);
+        const yi = Math.floor(y);
+        const xf = x - xi;
+        const yf = y - yi;
+        const X = xi & 255;
+        const Y = yi & 255;
+        const u = fade(xf);
+        const aa = grad(perm[perm[X] + Y], xf, yf);
+        const ba = grad(perm[perm[X + 1] + Y], xf - 1, yf);
+        const ab = grad(perm[perm[X] + Y + 1], xf, yf - 1);
+        const bb = grad(perm[perm[X + 1] + Y + 1], xf - 1, yf - 1);
+        const top = aa + u * (ba - aa);
+        const bottom = ab + u * (bb - ab);
+        return top + fade(yf) * (bottom - top);
+      }
+
+      function fbm(x, y) {
+        let sum = 0;
+        let amp = 0.5;
+        for (let o = 0; o < 4; o++) {
+          sum += amp * noise(x, y);
+          x *= 2;
+          y *= 2;
+          amp *= 0.5;
+        }
+        return sum;
+      }
+
+      // The field is drawn at ~80 cells on the long side and upscaled by CSS, which keeps it cheap and soft.
+      const CELLS = 80;
+      const UNIT = 3 / CELLS;
+      let cols = 0;
+      let rows = 0;
+      let image = null;
+      let shade = null;
+
+      function resize() {
+        const w = Math.max(1, bg.clientWidth);
+        const h = Math.max(1, bg.clientHeight);
+        const scale = CELLS / Math.max(w, h);
+        const nextCols = Math.max(2, Math.round(w * scale));
+        const nextRows = Math.max(2, Math.round(h * scale));
+        if (nextCols === cols && nextRows === rows) return false;
+        cols = soft.width = dots.width = nextCols;
+        rows = soft.height = dots.height = nextRows;
+        image = softCtx.createImageData(cols, rows);
+        // Matches the old veil (55% / 35% / 65% darker at top / middle / bottom) without its own layer.
+        shade = Float32Array.from({ length: rows }, (_, j) => {
+          const y = j / (rows - 1);
+          return 1 - (y < 0.5 ? 0.55 - 0.4 * y : 0.35 + 0.6 * (y - 0.5));
+        });
+        return true;
+      }
+
+      function draw(t) {
+        const data = image.data;
+        let k = 0;
+        for (let j = 0; j < rows; j++) {
+          const y = j * UNIT;
+          const rowShade = shade[j];
+          for (let i = 0; i < cols; i++) {
+            const x = i * UNIT;
+            const n =
+              0.65 * fbm(x + t * 0.0424, y + t * 0.0127) +
+              0.35 * fbm(x * 1.7 - t * 0.0265 + 31.4, y * 1.7 + t * 0.0191 + 17.2);
+            let d = (n + 0.05) / 0.45;
+            d = d <= 0 ? 0 : d >= 1 ? 1 : d * d * (3 - 2 * d);
+            data[k++] = 30 + 60 * d;
+            data[k++] = 30 + 60 * d;
+            data[k++] = 30 + 60 * d;
+            data[k++] = 255 * d * rowShade;
+          }
+        }
+        softCtx.putImageData(image, 0, 0);
+        dotsCtx.clearRect(0, 0, cols, rows);
+        dotsCtx.drawImage(soft, 0, 0);
+      }
+
+      const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
+      let running = false;
+      let last = 0;
+      let prev = 0;
+      let clock = 0;
+      let lastScroll = -Infinity;
+
+      // Clouds hold still from the first touch until scrolling settles, so scrolling gets the whole frame budget.
+      const hold = () => {
+        lastScroll = performance.now();
+      };
+      for (const type of ["scroll", "touchstart", "touchmove", "wheel"]) {
+        addEventListener(type, hold, { passive: true });
+      }
+
+      function tick(now) {
+        if (reduceMotion.matches) {
+          running = false;
+          return;
+        }
+        const dt = prev ? Math.min(now - prev, 100) : 0;
+        prev = now;
+        if (now - lastScroll > 250) {
+          clock += dt / 1000;
+          if (now - last >= 50) {
+            last = now;
+            draw(clock);
+          }
+        }
+        requestAnimationFrame(tick);
+      }
+
+      function start() {
+        if (running || reduceMotion.matches) return;
+        running = true;
+        prev = 0;
+        requestAnimationFrame(tick);
+      }
+
+      resize();
+      draw(clock);
+      bg.classList.add("is-live");
+      start();
+
+      reduceMotion.addEventListener("change", start);
+      // Android fires resize when the address bar slides during a scroll; only a real size change needs a redraw.
+      addEventListener("resize", () => {
+        if (resize()) draw(clock);
+      });
+    })();
+  </script>
+</body>
+</html>
