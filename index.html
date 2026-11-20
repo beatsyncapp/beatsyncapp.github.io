@@ -367,6 +367,7 @@
       font: inherit;
       line-height: 1.2;
       text-align: left;
+      text-decoration: none;
       cursor: pointer;
       transition: background-color 0.2s ease, transform 0.2s ease;
     }
@@ -1329,6 +1330,58 @@
       color: var(--muted);
     }
 
+    .btn-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      flex: none;
+    }
+
+    .download .apk-meta {
+      margin-top: -0.5rem;
+      font-size: 0.875rem;
+    }
+
+    .apk-help {
+      width: min(100%, 34rem);
+      padding: 0.25rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--panel);
+      text-align: left;
+    }
+
+    .apk-help summary {
+      min-height: 3rem;
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .apk-help ol {
+      margin: 0 0 0.75rem;
+      padding-left: 1.25rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .apk-help ol strong {
+      color: var(--text);
+    }
+
+    .download .apk-help p {
+      margin: 0 0 0.75rem;
+      font-size: 0.9375rem;
+    }
+
+    .download .apk-hash {
+      font-size: 0.8125rem;
+    }
+
+    .apk-hash code {
+      overflow-wrap: anywhere;
+    }
+
     /* Footer */
     .site-footer {
       padding: 3.5rem 0 2rem;
@@ -1670,22 +1723,22 @@
       <section class="hero">
         <div class="wrap">
           <div>
-            <span class="eyebrow">Coming soon for Android and Android TV</span>
+            <span class="eyebrow">Out now on Android phones. Android TV coming soon.</span>
             <h1>Beatsync</h1>
             <p class="tagline">Every phone and TV in the room. One song, in sync.</p>
             <p class="lede">Join a room with friends and every device plays the same song at the same moment, like one big speaker system.</p>
             <div class="actions">
+              <a class="tester-card" href="Beatsync.apk" download="Beatsync.apk" type="application/vnd.android.package-archive">
+                <svg class="android" aria-hidden="true"><use href="#android"/></svg>
+                <span><small>Download for Android</small><strong>Beatsync.apk</strong></span>
+                <svg class="arrow" aria-hidden="true"><use href="#arrow-down"/></svg>
+              </a>
               <div class="soon">
                 <svg aria-hidden="true"><use href="#play"/></svg>
                 <span><small>Coming soon to</small><strong>Google Play</strong></span>
               </div>
-              <button class="tester-card js-tester" type="button">
-                <svg class="android" aria-hidden="true"><use href="#android"/></svg>
-                <span><small>Get early access</small><strong>Become a tester</strong></span>
-                <svg class="arrow" aria-hidden="true"><use href="#arrow-right"/></svg>
-              </button>
             </div>
-            <p class="note">Free. No account needed.</p>
+            <p class="note">Free. No account needed. For Android phones, version 0.1.0, 24.7 MB. <a href="#download">How to install</a> or <button class="link-button js-tester" type="button">become a tester</button>.</p>
           </div>
           <div class="hero-phones">
             <div class="device tv back" aria-hidden="true">
@@ -1829,7 +1882,7 @@
             <li class="step" data-reveal>
               <div class="step-num">1</div>
               <h3>Install Beatsync</h3>
-              <p>Get it free from Google Play once it launches, on your phone or your Android TV.</p>
+              <p>Download Beatsync.apk for your phone now, or get it from Google Play once it launches, on your phone or your Android TV.</p>
             </li>
             <li class="step" data-reveal style="--reveal-delay:0.08s">
               <div class="step-num">2</div>
@@ -1886,7 +1939,11 @@
             </details>
             <details>
               <summary>Can I try it before it launches?</summary>
-              <p>Yes. <button class="link-button js-tester" type="button">Become a tester</button> and we'll email you a Google Play link. You install the test version from the Play Store, like any other app.</p>
+              <p>Yes. <a href="#download">Download Beatsync.apk</a> for your Android phone, or <button class="link-button js-tester" type="button">become a tester</button> and we'll email you a Google Play link. The APK is for phones only; the TV app will come through Google Play.</p>
+            </details>
+            <details>
+              <summary>Will the APK update from Google Play?</summary>
+              <p>No. Google Play signs its copy of the app with a different key, so it can't update the APK version. When Beatsync is on Google Play, uninstall the APK version first, then install it from Play. Until then, download a newer APK from this page and install it over the old one.</p>
             </details>
             <details>
               <summary>How do I remove my data?</summary>
@@ -1930,11 +1987,26 @@
           <img src="favicon.svg" alt="" width="72" height="72">
           <h2>Get Beatsync</h2>
           <p>Free on Android phones and Android TV. No account needed.</p>
+          <a class="btn" href="Beatsync.apk" download="Beatsync.apk" type="application/vnd.android.package-archive">
+            <svg class="btn-icon" aria-hidden="true"><use href="#android"/></svg>Download Beatsync.apk
+          </a>
+          <p class="apk-meta">Version 0.1.0 · 24.7 MB · Android 6.0 or newer · phones only</p>
+          <details class="apk-help">
+            <summary>How to install the APK</summary>
+            <ol>
+              <li>On your Android phone, tap <strong>Download Beatsync.apk</strong>.</li>
+              <li>Open the file from your notifications or your Downloads folder.</li>
+              <li>If Android asks, allow your browser to install unknown apps, then go back.</li>
+              <li>Tap <strong>Install</strong>, then open Beatsync.</li>
+            </ol>
+            <p>When Beatsync is on Google Play, uninstall this version first, then install it from Play.</p>
+            <p class="apk-hash">SHA-256: <code>552b520dcac5dd1e3dc4d7228e53cc9aa655e4691aef333adb4e86513f8871e9</code></p>
+          </details>
           <div class="soon">
             <svg aria-hidden="true"><use href="#play"/></svg>
             <span><small>Coming soon to</small><strong>Google Play</strong></span>
           </div>
-          <p>Want it sooner? <button class="link-button js-tester" type="button">Become a tester</button> and try it before launch.</p>
+          <p>Prefer Google Play? <button class="link-button js-tester" type="button">Become a tester</button> and try it before launch.</p>
         </div>
       </section>
     </main>
@@ -1952,6 +2024,7 @@
               <li><a href="#features">Features</a></li>
               <li><a href="#how">How it works</a></li>
               <li><a href="#faq">FAQ</a></li>
+              <li><a href="Beatsync.apk" download="Beatsync.apk">Download APK</a></li>
               <li><a href="#download">Google Play (coming soon)</a></li>
             </ul>
           </div>
